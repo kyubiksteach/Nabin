@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabin Basnet | Blox Fruits Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00d2ff;
+      --accent: #ff007a;
+      --bg: #050a18;
+      --card: rgba(30, 41, 59, 0.7);
+      --text: #f1f5f9;
+      --glow: 0 0 15px rgba(0, 210, 255, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      /* Deep space background like the image */
+      background: radial-gradient(circle at top right, #1e1b4b, #050a18), 
+                  url('https://www.transparenttextures.com/patterns/stardust.png');
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Hero Section with Blox Fruits Aesthetic */
+    .hero {
+      padding: 100px 20px 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 20px var(--primary);
+      margin-top: 10px;
+    }
+
+    .hero p {
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Floating Fruit Icons (Decorative) */
+    .fruit-decor {
+      position: absolute;
+      width: 80px;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 10px var(--primary));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    /* NEON PROFILE IMAGE */
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      box-shadow: 0 0 30px var(--primary);
+      transition: 0.3s;
+      background: #1e293b;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 50px var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -60px auto 50px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 30px;
+    }
+
+    /* GLASSMORPHISM CARDS */
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      margin-bottom: 25px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* PROGRESS BARS */
+    .skill-container { margin-bottom: 18px; }
+    .skill-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; }
+    .skill-bar { background: rgba(255,255,255,0.1); height: 8px; border-radius: 10px; overflow: hidden; }
+    .skill-progress { height: 100%; border-radius: 10px; box-shadow: 0 0 10px var(--primary); }
+
+    .info-list { list-style: none; }
+    .info-list li { margin-bottom: 15px; color: #cbd5e1; }
+    .info-list strong { color: var(--primary); }
+
+    .badge {
+        background: rgba(0, 210, 255, 0.1);
+        color: var(--primary);
+        padding: 4px 12px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        border: 1px solid var(--primary);
+    }
+
+    @media (max-width: 850px) {
+      .container { grid-template-columns: 1fr; margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="https://api.iconify.design/noto:dragon.svg" class="fruit-decor" style="top: 10%; left: 15%;">
+    <img src="https://api.iconify.design/emojione-v1:fire.svg" class="fruit-decor" style="top: 20%; right: 15%; animation-delay: 2s;">
+    
+    <img src="profile.jpg" alt="Nabin Basnet" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=NB&size=200&background=00d2ff&color=fff'">
+    <h1>Nabin Basnet</h1>
+    <p>Blox Fruits Grandmaster | Young Developer | Digital Artist</p>
+  </header>
+
+  <div class="container">
+    <aside>
+      <div class="card">
+        <h2>Contact Information</h2>
+        <ul class="info-list">
+          <li><strong>📧 Email:</strong> basnetg690@gmail.com</li>
+          <li><strong>contact no</strong> 9762445493</li>
+          <li><strong>📍 Location:</strong> Nepal</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Expertise</h2>
+        
+        <div class="skill-container">
+          <div class="skill-label"><span>HTML & CSS</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 90%; background: var(--primary);"></div></div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-label"><span> Drawing</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 60%; background: var(--accent);"></div></div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-label"><span>Python Coding</span><span>20%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 20%; background: #22c55e;"></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="card"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabin Basnet | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00d2ff;
+      --accent: #ff007a;
+      --bg: #050a18;
+      --card: rgba(15, 23, 42, 0.8);
+      --text: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Particle Canvas Styling */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Puts it behind everything */
+      background: radial-gradient(circle at top right, #1e1b4b, #050a18);
+    }
+
+    .hero {
+      padding: 100px 20px 140px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 0 25px var(--primary);
+      margin-top: 15px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      box-shadow: 0 0 35px var(--primary);
+      background: #1e293b;
+      transition: transform 0.4s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -60px auto 50px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 30px;
+      position: relative;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      margin-bottom: 25px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Skill Bars */
+    .skill-container { margin-bottom: 18px; }
+    .skill-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; }
+    .skill-bar { background: rgba(255,255,255,0.1); height: 10px; border-radius: 10px; overflow: hidden; }
+    .skill-progress { height: 100%; border-radius: 10px; box-shadow: 0 0 10px var(--primary); transition: width 1s ease-in-out; }
+
+    .showcase-grid {
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 15px;
+    }
+
+    .showcase-item {
+      background: rgba(255,255,255,0.03); 
+      padding: 20px; 
+      border-radius: 15px; 
+      border: 1px solid rgba(0, 210, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .showcase-item:hover {
+      border-color: var(--primary);
+      background: rgba(0, 210, 255, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .info-list { list-style: none; }
+    .info-list li { margin-bottom: 15px; color: #cbd5e1; }
+    .info-list strong { color: var(--primary); }
+
+    @media (max-width: 850px) {
+      .container { grid-template-columns: 1fr; margin-top: 20px; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <header class="hero">
+    <img src="profile.jpg" alt="Nabin Basnet" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=NB&size=200&background=00d2ff&color=fff'">
+    <h1>Nabin Basnet</h1>
+    <p style="color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Coder | Class 9 Student | Artist</p>
+  </header>
+
+  <div class="container">
+    <aside>
+      <div class="card">
+        <h2>Contact</h2>
+        <ul class="info-list">
+          <li><strong>📧 Email:</strong> basnetg690@gmail.com</li>
+          <li><strong>📞 Phone:</strong> 9762445493</li>
+          <li><strong>📍 Location:</strong> Nepal</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Expertise</h2>
+        <div class="skill-container">
+          <div class="skill-label"><span>HTML & CSS</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 90%; background: var(--primary);"></div></div>
+        </div>
+        <div class="skill-container">
+          <div class="skill-label"><span>Drawing</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 60%; background: var(--accent);"></div></div>
+        </div>
+        <div class="skill-container">
+          <div class="skill-label"><span>Python</span><span>20%</span></div>
+          <div class="skill-bar"><div class="skill-progress" style="width: 20%; background: #22c55e;"></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="card">
+        <h2>Professional Summary</h2>
+        <p>I am Nabin Basnet. I am currently <strong>reading in class nine</strong> at Panityanki Secondary School. I have a strong passion for technology and creativity, spending my time learning the fundamentals of computer science and digital arts.</p>
+      </div>
+
+      <div class="card">
+        <h2>My Focus</h2>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <h4 style="color: var(--primary); margin-bottom: 10px;">💻 Coding Hobby</h4>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Coding is my favorite hobby. I love solving problems using Python and building responsive websites with HTML and CSS.</p>
+            </div>
+            <div class="showcase-item">
+                <h4 style="color: var(--accent); margin-bottom: 10px;">🏫 Class 9 Student</h4>
+                <p style="font-size: 0.85rem; color: #94a3b8;">I am currently studying in Class 9, focusing on Computer Science to build a solid foundation for my future career.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Academic Journey</h2>
+        <p><strong>Panityanki Secondary School</strong></p>
+        <p style="font-size: 0.9rem; color: #94a3b8;">Level: Secondary Education | Year: 2082 B.S.</p>
+      </div>
+
+      <div class="card">
+        <h2>Achievements</h2>
+        <ul style="padding-left: 20px; color: #cbd5e1;">
+          <li>🥇 1st Prize in School Drawing Competition</li>
+          <li>📜 Certificate in AI & App Development</li>
+          <li>🌐 Successfully built personal web projects</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.8rem;">
+    © 2082 B.S. | Nabin Basnet | Developed with Passion
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let mouse = { x: null, y: null, radius: (canvas.height/80) * (canvas.width/80) };
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = '#00d2ff';
+            ctx.fill();
+        }
+        update() {
+            if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+            this.x += this.directionX;
+            this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    function init() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        for (let i = 0; i < numberOfParticles; i++) {
+            let size = (Math.random() * 2) + 1;
+            let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 2) - 1;
+            let directionY = (Math.random() * 2) - 1;
+            let color = '#00d2ff';
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    function connect() {
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if (distance < (canvas.width/7) * (canvas.height/7)) {
+                    opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = 'rgba(0, 210, 255,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        connect();
+    }
+
+    window.addEventListener('resize', function(){
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        mouse.radius = ((canvas.height/80) * (canvas.width/80));
+        init();
+    });
+
+    init();
+    animate();
+  </script>
+</body>
+</html>
+        <h2>About The Creator</h2>
+        <p>I am Nabin Basnet, a Class 9 student from Nepal. I specialize in combining gaming aesthetics with clean code. Whether I'm mastering a new fruit in <strong>Blox Fruits</strong> or debugging a <strong>Python</strong> script, I always aim for the highest level.</p>
+      </div>
+
+      <div class="card">
+        <h2>Education & Ranking</h2>
+        <p><strong>Class 9 - Panityanki Secondary School</strong></p>
+        <p style="font-size: 0.9rem; color: #94a3b8;">Focusing on Computer Science and Game Theory.</p>
+        <div style="margin-top: 15px;">
+
+            <span class="badge">Coder</span>
+            <span class="badge">Artist</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Achievements</h2>
+        <ul style="padding-left: 20px; color: #cbd5e1;">
+          <li>🥇 1st Prize in School Drawing Competition</li>
+          <li>📜 Certified in AI & App Development</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.8rem;">
+    © 2026 | Nabin Basnet | Built with code & spirit.
+  </footer>
+
+</body>
+</html>
